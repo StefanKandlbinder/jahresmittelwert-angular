@@ -8,6 +8,8 @@ import { CardHeaderComponent } from './card-header/card-header.component';
 import { CardContentComponent } from './card-content/card-content.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from './loading/loading.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,13 @@ import { LoadingComponent } from './loading/loading.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
