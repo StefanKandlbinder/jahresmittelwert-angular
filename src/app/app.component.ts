@@ -49,6 +49,7 @@ export class AppComponent implements OnInit {
   }
 
   update() {
+    this.loading = true;
     this.measurementService.getData(createUrls(2, this.station.stationId, this.station.measurand, false), this.mean).pipe(
       take(1)
     ).subscribe({
