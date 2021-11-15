@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
     "stationId": "S415",
     "stationShort": "-",
     "measurand": "NO2",
+    "mean": "TMW",
     "value": "0.00",
     "unit": "µg/m³",
     "dateFrom": 0,
@@ -24,7 +25,6 @@ export class AppComponent implements OnInit {
   stations!: Station[];
   selectedStation: string = this.station.stationId;
   measurands = ["NO2", "PM10kont", "PM25kont"];
-  mean = "TMW";
   days = 0;
   loading = false;
   title = "Tagesdurchschnitt";
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
 
   onHandlePeriod(days: number, mean: string) {
     this.days = days;
-    this.mean = mean;
+    this.station.mean = mean;
     this.update();
   }
 
@@ -60,24 +60,28 @@ export class AppComponent implements OnInit {
     switch (this.days) {
       case 0:
         this.title = "Aktueller Wert"
+        this.station.mean = "HMW"
         break;
       case 1:
         this.title = "Tagesdurchschnitt"
+        this.station.mean = "TMW"
         break;
       case 7:
         this.title = "Wochendurchschnitt"
+        this.station.mean = "TMW"
         break;
       case 31:
         this.title = "Monatsdurchschnitt"
+        this.station.mean = "TMW"
         break;
     }
 
-    this.measurementService.getData(createUrls(this.days, this.station.stationId, this.station.measurand, false), this.mean).pipe(
+    this.measurementService.getData(createUrls(this.days, this.station.stationId, this.station.measurand, false), this.station.mean).pipe(
       take(1)
     ).subscribe({
       next: (measurements) => {
         this.loading = false;
-        this.station = this.measurementService.getDataStation(measurements);
+        this.station = this.measurementService.getDataStation(measurements, this.station.mean);
       },
       error: (error: any) => {
         throw error;

@@ -32,11 +32,12 @@ export class MeasurementService {
       )
   }
 
-  getDataStation(measurements: Measurement[]): ICard {
+  getDataStation(measurements: Measurement[], mean: string): ICard {
     let stationData: ICard = {
       "stationId": "S431",
       "stationShort": "Stadtpark",
       "measurand": "SO2",
+      "mean": "TMW",
       "value": "12.00",
       "unit": "µg/m³",
       "dateFrom": 1209999,
@@ -50,6 +51,7 @@ export class MeasurementService {
     stationData.stationId = measurements[0].station;
     stationData.stationShort = this.stationsService.getStationByCode(measurements[0].station).kurzname;
     stationData.measurand = measurements[0].komponente;
+    stationData.mean = mean;
     stationData.value = measurements[0].messwert;
     stationData.unit = measurements[0].einheit;
     stationData.dateFrom = measurements[(measurements.length - 1)].zeitpunkt;
@@ -62,10 +64,7 @@ export class MeasurementService {
       count++;
     })
 
-    console.log(mittelwert.toFixed(2).toString())
-
-
-    stationData.value = mittelwert.toFixed(2).toString();
+    mean === "TMW" ? stationData.value = mittelwert.toFixed(2).toString() : stationData.value = (parseFloat(measurements[measurements.length - 1].messwert.replace(",", ".")) * 1000).toFixed(2).toString();
 
     return stationData;
   }
