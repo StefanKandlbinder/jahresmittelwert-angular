@@ -66,6 +66,8 @@ export class MeasurementService {
 
     mean === "TMW" ? stationData.value = mittelwert.toFixed(2).toString() : stationData.value = (parseFloat(measurements[measurements.length - 1].messwert.replace(",", ".")) * 1000).toFixed(2).toString();
 
+    console.log(stationData.value, mean);
+
     return stationData;
   }
 }
