@@ -26,10 +26,10 @@ export class AppComponent implements OnInit {
   selectedStation: string = this.station.stationId;
   measurands = ["NO2", "PM10kont", "PM25kont"];
   mean = "TMW";
+  days = 0;
   loading = false;
 
   constructor(private measurementService: MeasurementService, private stationsService: StationsService) {
-    this.loading = true;
     this.stations = this.stationsService.getStations();
   }
 
@@ -48,9 +48,15 @@ export class AppComponent implements OnInit {
     this.update()
   }
 
+  onHandlePeriod(days:number, mean: string) {
+    this.days = days;
+    this.mean = mean;
+    this.update();
+  }
+
   update() {
     this.loading = true;
-    this.measurementService.getData(createUrls(2, this.station.stationId, this.station.measurand, false), this.mean).pipe(
+    this.measurementService.getData(createUrls(this.days, this.station.stationId, this.station.measurand, false), this.mean).pipe(
       take(1)
     ).subscribe({
       next: (measurements) => {

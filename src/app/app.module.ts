@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from './loading/loading.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { environment } from '../environments/environment';
     CardComponent,
     CardHeaderComponent,
     CardContentComponent,
-    LoadingComponent
+    LoadingComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

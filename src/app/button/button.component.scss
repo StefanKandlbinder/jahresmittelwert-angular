@@ -1,0 +1,19 @@
+@tailwind components;
+@tailwind utilities;
+
+.jmw-button {
+  @apply flex items-center justify-center bg-indigo-800 text-white rounded-lg w-10 h-10;
+
+  &:hover {
+    @apply bg-indigo-700
+  }
+
+  &:active,
+  &-active {
+    @apply bg-white text-indigo-800
+  }
+
+  &:disabled {
+    @apply pointer-events-none opacity-50
+  }
+}
