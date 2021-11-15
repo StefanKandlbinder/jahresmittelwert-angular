@@ -56,6 +56,7 @@ export class AppComponent implements OnInit {
 
   update() {
     this.loading = true;
+
     switch (this.days) {
       case 0:
         this.title = "Aktueller Wert"
