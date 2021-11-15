@@ -12,7 +12,6 @@ import { createUrls } from './utilities/utilities';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'jahresmittelwert-angular';
   station: ICard = {
     "stationId": "S415",
     "stationShort": "-",
@@ -28,6 +27,7 @@ export class AppComponent implements OnInit {
   mean = "TMW";
   days = 0;
   loading = false;
+  title = "Tagesdurchschnitt";
 
   constructor(private measurementService: MeasurementService, private stationsService: StationsService) {
     this.stations = this.stationsService.getStations();
@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
     this.update()
   }
 
-  onHandlePeriod(days:number, mean: string) {
+  onHandlePeriod(days: number, mean: string) {
     this.days = days;
     this.mean = mean;
     this.update();
@@ -56,6 +56,21 @@ export class AppComponent implements OnInit {
 
   update() {
     this.loading = true;
+    switch (this.days) {
+      case 0:
+        this.title = "Aktueller Wert"
+        break;
+      case 1:
+        this.title = "Tagesdurchschnitt"
+        break;
+      case 7:
+        this.title = "Wochendurchschnitt"
+        break;
+      case 31:
+        this.title = "Monatsdurchschnitt"
+        break;
+    }
+
     this.measurementService.getData(createUrls(this.days, this.station.stationId, this.station.measurand, false), this.mean).pipe(
       take(1)
     ).subscribe({

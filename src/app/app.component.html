@@ -1,7 +1,7 @@
 <div
   class="bg-indigo-800 px-4 text-white py-6 align-center justify-center flex w-full flex-col items-center shadow-xl border-b border-2 border-indigo-900">
   <div id="header" class="mb-4 font-bold tracking-wide text-lg">
-    Tagesdurchschnitt
+    {{title}}
   </div>
   <div class="grid gap-3 grid-cols-1 md:grid-cols-2 w-full max-w-xl">
     <select (change)="onChangePolluter($event)"
@@ -25,11 +25,13 @@
 </div>
 <div class="flex mt-6 justify-center">
   <jmw-button (click)="onHandlePeriod(0, 'HMW')">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth=2 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pointer-events-none" fill="none" viewBox="0 0 24 24"
+      stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth=2
+        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
   </jmw-button>
-  <jmw-button (click)="onHandlePeriod(0, 'TMW')" class="ml-2">T</jmw-button>
+  <jmw-button (click)="onHandlePeriod(1, 'TMW')" class="ml-2">T</jmw-button>
   <jmw-button (click)="onHandlePeriod(7, 'TMW')" class="ml-2">W</jmw-button>
   <jmw-button (click)="onHandlePeriod(31, 'TMW')" class="ml-2">M</jmw-button>
   <jmw-button class="ml-2 pointer-events-none opacity-50">J</jmw-button>
