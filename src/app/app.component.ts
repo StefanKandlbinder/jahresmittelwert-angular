@@ -1,5 +1,5 @@
 import { HtmlAstPath } from '@angular/compiler';
-import { AfterContentChecked, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { take } from 'rxjs';
 import { ICard } from './card/card.interface';
 import { MeasurementService } from './measurement/measurement.service';
@@ -12,7 +12,7 @@ import { createUrls } from './utilities/utilities';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit, OnChanges {
   @ViewChild('periodButtonGroup')
   periodButtonGroup!: ElementRef<HTMLElement>;
 
@@ -36,7 +36,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(private measurementService: MeasurementService, private stationsService: StationsService) {
     this.stations = this.stationsService.getStations();
   }
-  ngAfterViewInit(): void {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    // TODO //
+    console.info(changes);
+  }
 
   ngOnInit(): void {
     this.update();
