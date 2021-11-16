@@ -4,6 +4,7 @@
     {{station.value}}<div class="text-xs font-light">µg/m³</div>
   </div>
   <div class="absolute left-0 bottom-0 text-white font-light text-xs pb-2 w-full rounded-b-lg">
-    <span *ngIf="station.mean !== 'TMW'">{{station.dateFrom | date}}</span><span *ngIf="station.mean === 'TMW'"> - {{station.dateTo | date}}</span>
+    <span>{{station.dateFrom | date}}</span><span *ngIf="station.mean === 'TMW'"> - {{station.dateTo | date}}</span>
+    <!--<span *ngIf="station.mean !== 'TMW'">{{station.dateFrom | date}}</span><span *ngIf="station.mean !== 'TMW'"> - {{station.dateTo | date}}</span>-->
   </div>
 </div>
