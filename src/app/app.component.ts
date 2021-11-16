@@ -36,9 +36,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(private measurementService: MeasurementService, private stationsService: StationsService) {
     this.stations = this.stationsService.getStations();
   }
-  ngAfterViewInit(): void {
-    this.handleButtonActive(this.periodButtonGroup.nativeElement.querySelectorAll("jmw-button"))
-  }
+  ngAfterViewInit(): void {}
 
   ngOnInit(): void {
     this.update();
@@ -60,8 +58,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.station.mean = mean;
 
     this.periodButtonGroup.nativeElement.querySelectorAll("jmw-button").forEach(button => {
-      if (button.id === event.target.id) {
-        event.target.classList.add("active")
+      if (button.id === event.target.parentElement.id) {
+        event.target.parentElement.classList.add("active")
       }
       else {
         button.classList.remove("active");
@@ -69,12 +67,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     })
 
     this.update();
-  }
-
-  handleButtonActive(list: NodeList) {
-    list.forEach(item => {
-      console.log(item)
-    })
   }
 
   update() {
