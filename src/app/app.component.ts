@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { HtmlAstPath } from '@angular/compiler';
+import { AfterContentChecked, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { take } from 'rxjs';
 import { ICard } from './card/card.interface';
 import { MeasurementService } from './measurement/measurement.service';
@@ -11,7 +12,10 @@ import { createUrls } from './utilities/utilities';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
+  @ViewChild('periodButtonGroup')
+  periodButtonGroup!: ElementRef<HTMLElement>;
+
   station: ICard = {
     "stationId": "S415",
     "stationShort": "-",
@@ -32,6 +36,9 @@ export class AppComponent implements OnInit {
   constructor(private measurementService: MeasurementService, private stationsService: StationsService) {
     this.stations = this.stationsService.getStations();
   }
+  ngAfterViewInit(): void {
+    this.handleButtonActive(this.periodButtonGroup.nativeElement.querySelectorAll("jmw-button"))
+  }
 
   ngOnInit(): void {
     this.update();
@@ -48,10 +55,26 @@ export class AppComponent implements OnInit {
     this.update()
   }
 
-  onHandlePeriod(days: number, mean: string) {
+  onHandlePeriod(event: any, days: number, mean: string) {
     this.days = days;
     this.station.mean = mean;
+
+    this.periodButtonGroup.nativeElement.querySelectorAll("jmw-button").forEach(button => {
+      if (button.id === event.target.id) {
+        event.target.classList.add("active")
+      }
+      else {
+        button.classList.remove("active");
+      }
+    })
+
     this.update();
+  }
+
+  handleButtonActive(list: NodeList) {
+    list.forEach(item => {
+      console.log(item)
+    })
   }
 
   update() {

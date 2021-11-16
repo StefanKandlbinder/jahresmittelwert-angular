@@ -23,16 +23,16 @@
   <jmw-card [station]="station"></jmw-card>
   <jmw-loading *ngIf="loading"></jmw-loading>
 </div>
-<div class="flex mt-6 justify-center">
-  <jmw-button (click)="onHandlePeriod(0, 'HMW')">
+<div #periodButtonGroup class="flex mt-6 justify-center">
+  <jmw-button id="nowButton" class="active" (click)="onHandlePeriod($event, 0, 'HMW')">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pointer-events-none" fill="none" viewBox="0 0 24 24"
       stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth=2
         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
   </jmw-button>
-  <jmw-button (click)="onHandlePeriod(1, 'TMW')" class="ml-2">T</jmw-button>
-  <jmw-button (click)="onHandlePeriod(7, 'TMW')" class="ml-2">W</jmw-button>
-  <jmw-button (click)="onHandlePeriod(31, 'TMW')" class="ml-2">M</jmw-button>
-  <jmw-button class="ml-2 pointer-events-none opacity-50">J</jmw-button>
+  <jmw-button id="dailyButton" (click)="onHandlePeriod($event, 1, 'TMW')" class="ml-2">T</jmw-button>
+  <jmw-button id="weeklyButton" (click)="onHandlePeriod($event, 7, 'TMW')" class="ml-2">W</jmw-button>
+  <jmw-button id="monthlyButton" (click)="onHandlePeriod($event, 31, 'TMW')" class="ml-2">M</jmw-button>
+  <jmw-button id="yearlyButton" class="ml-2 pointer-events-none opacity-50">J</jmw-button>
 </div>
