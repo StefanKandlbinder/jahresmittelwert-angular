@@ -26,7 +26,15 @@ export function getDates(days: number) {
 function getToday() {
   let date = new Intl.DateTimeFormat("en-GB").format(new Date());
   let tmpDate = date.split("/");
-  return date = "datvon=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " 00:00" + "&datbis=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " " + new Date().getHours() + ":" + new Date().getMinutes();
+  let minutes = "";
+  if (new Date().getMinutes() < 10) {
+    minutes = "0" + new Date().getMinutes().toString();
+  }
+  else {
+    minutes = new Date().getMinutes().toString();
+  }
+
+  return date = "datvon=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " 00:00" + "&datbis=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " " + new Date().getHours() + ":" + minutes;
 
 }
 
