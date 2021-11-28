@@ -12,6 +12,7 @@ export function getDates(days: number) {
 
         let tmpDateto = dateTo.split("/");
         dateTo = tmpDateto[2] + "-" + tmpDateto[1] + "-" + tmpDateto[0] + " 00:00";
+
         let tmpDateFrom = dateFrom.split("/");
         dateFrom =
             tmpDateFrom[2] + "-" + tmpDateFrom[1] + "-" + tmpDateFrom[0] + " 00:00";
