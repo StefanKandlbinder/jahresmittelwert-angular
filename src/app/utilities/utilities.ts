@@ -24,8 +24,8 @@ export function getDates(days: number) {
 
 function getToday() {
   let date = new Intl.DateTimeFormat("en-GB").format(new Date());
-  let tmpDateto = date.split("/");
-  return date = tmpDateto[2] + "-" + tmpDateto[1] + "-" + tmpDateto[0] + " 00:00";
+  let tmpDate = date.split("/");
+  return date = "datvon=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " 00:00" + "&datbis=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " " + new Date().getHours() + ":" + new Date().getMinutes();
 
 }
 
@@ -45,7 +45,7 @@ export function createUrls(days: number, station:string, component:string, proxy
         });
     }
     else {
-        urls.push(`${proxy ? proxyUrl : "https://www2.land-oberoesterreich.gv.at/"}imm/jaxrs/messwerte/json?datvon=${proxy ? proxyDatVon: getToday()}&stationcode=${station}&komponentencode=${component}`);
+        urls.push(`${proxy ? proxyUrl : "https://www2.land-oberoesterreich.gv.at/"}imm/jaxrs/messwerte/json?${getToday()}&stationcode=${station}&komponentencode=${component}`);
     }
 
     return urls;
