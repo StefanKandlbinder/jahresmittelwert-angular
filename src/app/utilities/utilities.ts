@@ -22,6 +22,13 @@ export function getDates(days: number) {
     return dates;
 };
 
+function getToday() {
+  let date = new Intl.DateTimeFormat("en-GB").format(new Date());
+  let tmpDateto = date.split("/");
+  return date = tmpDateto[2] + "-" + tmpDateto[1] + "-" + tmpDateto[0] + " 00:00";
+
+}
+
 export function createUrls(days: number, station:string, component:string, proxy: boolean) {
     const proxyUrl = "https://53d58500-4f48-4fde-b935-b53483b6fe66.mock.pstmn.io/"
     const proxyDatVon ="2021-10-20%2000:00";
@@ -38,7 +45,7 @@ export function createUrls(days: number, station:string, component:string, proxy
         });
     }
     else {
-        urls.push(`${proxy ? proxyUrl : "https://www2.land-oberoesterreich.gv.at/"}imm/jaxrs/messwerte/json?&stationcode=${station}&komponentencode=${component}`);
+        urls.push(`${proxy ? proxyUrl : "https://www2.land-oberoesterreich.gv.at/"}imm/jaxrs/messwerte/json?datvon=${proxy ? proxyDatVon: getToday()}&stationcode=${station}&komponentencode=${component}`);
     }
 
     return urls;
