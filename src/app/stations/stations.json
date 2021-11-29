@@ -735,28 +735,6 @@
       ]
     },
     {
-      "code": "S268",
-      "kurzname": "Steyrermühl 4",
-      "langname": "Steyrermühl 4",
-      "geoLaenge": 13.80413,
-      "geoBreite": 47.99529,
-      "geoRechtswert": 35194.0,
-      "geoHochwert": 317531.0,
-      "komponentenCodes": [
-        "PM10kont",
-        "PM25kont",
-        "TEMP",
-        "RF",
-        "SO2",
-        "H2S",
-        "NO2",
-        "NO",
-        "BOE",
-        "WIV",
-        "WIR"
-      ]
-    },
-    {
       "code": "L013",
       "kurzname": "Traun",
       "langname": "Traun",
