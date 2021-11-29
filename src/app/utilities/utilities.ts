@@ -23,6 +23,28 @@ export function getDates(days: number) {
     return dates;
 };
 
+export function createUrls(days: number, station:string, component:string, proxy: boolean) {
+    const proxyUrl = "https://53d58500-4f48-4fde-b935-b53483b6fe66.mock.pstmn.io/"
+    const proxyDatVon ="2021-10-20%2000:00";
+    const proxyDatBis ="2021-10-21%2000:00";
+
+    let urls = [];
+
+    if (days > 1) {
+        getDates(days).map((date) => {
+            urls.push(
+                `${proxy ? proxyUrl : "https://www2.land-oberoesterreich.gv.at/"}imm/jaxrs/messwerte/json?datvon=${proxy ? proxyDatVon: date.dateFrom}&datbis=${proxy ? proxyDatBis : date.dateTo}&stationcode=${station}&komponentencode=${component}`
+            );
+            return true;
+        });
+    }
+    else {
+        urls.push(`${proxy ? proxyUrl : "https://www2.land-oberoesterreich.gv.at/"}imm/jaxrs/messwerte/json?${getToday()}&stationcode=${station}&komponentencode=${component}`);
+    }
+
+    return urls;
+};
+
 function getToday() {
   let date = new Intl.DateTimeFormat("en-GB").format(new Date());
   let tmpDate = date.split("/");
@@ -44,25 +66,3 @@ function getToday() {
 
   return date = "datvon=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " 00:00" + "&datbis=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " " + hours + ":" + minutes;
 }
-
-export function createUrls(days: number, station:string, component:string, proxy: boolean) {
-    const proxyUrl = "https://53d58500-4f48-4fde-b935-b53483b6fe66.mock.pstmn.io/"
-    const proxyDatVon ="2021-10-20%2000:00";
-    const proxyDatBis ="2021-10-21%2000:00";
-
-    let urls = [];
-
-    if (days > 0) {
-        getDates(days).map((date) => {
-            urls.push(
-                `${proxy ? proxyUrl : "https://www2.land-oberoesterreich.gv.at/"}imm/jaxrs/messwerte/json?datvon=${proxy ? proxyDatVon: date.dateFrom}&datbis=${proxy ? proxyDatBis : date.dateTo}&stationcode=${station}&komponentencode=${component}`
-            );
-            return true;
-        });
-    }
-    else {
-        urls.push(`${proxy ? proxyUrl : "https://www2.land-oberoesterreich.gv.at/"}imm/jaxrs/messwerte/json?${getToday()}&stationcode=${station}&komponentencode=${component}`);
-    }
-
-    return urls;
-};

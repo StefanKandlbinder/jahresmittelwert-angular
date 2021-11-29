@@ -32,7 +32,7 @@ export class MeasurementService {
       )
   }
 
-  getDataStation(measurements: Measurement[], mean: string): ICard {
+  getDataStation(measurements: Measurement[], mean: string, days:number): ICard {
     let stationData: ICard = {
       "stationId": "S431",
       "stationShort": "Stadtpark",
@@ -64,7 +64,7 @@ export class MeasurementService {
       count++;
     })
 
-    mean === "TMW" ? stationData.value = mittelwert.toFixed(2).toString() : stationData.value = (parseFloat(measurements[measurements.length - 1].messwert.replace(",", ".")) * 1000).toFixed(2).toString();
+    mean === "TMW" || (mean === "HMW" && days === 1) ? stationData.value = mittelwert.toFixed(2).toString() : stationData.value = (parseFloat(measurements[measurements.length - 1].messwert.replace(",", ".")) * 1000).toFixed(2).toString();
 
     console.log(stationData.value, mean);
 

@@ -83,7 +83,7 @@ export class AppComponent implements OnInit, OnChanges {
         break;
       case 1:
         this.title = "Tagesdurchschnitt"
-        this.station.mean = "TMW"
+        this.station.mean = "HMW"
         break;
       case 7:
         this.title = "Wochendurchschnitt"
@@ -100,7 +100,7 @@ export class AppComponent implements OnInit, OnChanges {
     ).subscribe({
       next: (measurements) => {
         this.loading = false;
-        this.station = this.measurementService.getDataStation(measurements, this.station.mean);
+        this.station = this.measurementService.getDataStation(measurements, this.station.mean, this.days);
       },
       error: (error: any) => {
         throw error;
