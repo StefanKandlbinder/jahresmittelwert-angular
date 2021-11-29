@@ -27,15 +27,22 @@ function getToday() {
   let date = new Intl.DateTimeFormat("en-GB").format(new Date());
   let tmpDate = date.split("/");
   let minutes = "";
+  let hours = "";
+
   if (new Date().getMinutes() < 10) {
     minutes = "0" + new Date().getMinutes().toString();
   }
   else {
     minutes = new Date().getMinutes().toString();
   }
+  if (new Date().getHours() < 10) {
+    hours = "0" + new Date().getMinutes().toString();
+  }
+  else {
+    hours = new Date().getHours().toString();
+  }
 
-  return date = "datvon=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " 00:00" + "&datbis=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " " + new Date().getHours() + ":" + minutes;
-
+  return date = "datvon=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " 00:00" + "&datbis=" + tmpDate[2] + "-" + tmpDate[1] + "-" + tmpDate[0] + " " + hours + ":" + minutes;
 }
 
 export function createUrls(days: number, station:string, component:string, proxy: boolean) {
