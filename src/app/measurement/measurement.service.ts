@@ -55,7 +55,11 @@ export class MeasurementService {
     stationData.value = measurements[0].messwert;
     stationData.unit = measurements[0].einheit;
     stationData.dateFrom = measurements[(measurements.length - 1)].zeitpunkt;
+    stationData.dateFrom += 60 * 60 *1000;
     stationData.dateTo = measurements[0].zeitpunkt;
+    // stationData.dateTo = stationData.dateTo + 60 * 60 * 1000 // SUMMERTIME
+
+    console.log(stationData.dateFrom, stationData.dateTo)
 
     measurements.map(measurement => {
       let tmp = parseFloat(measurement.messwert.replace(",", ".")) * 1000;

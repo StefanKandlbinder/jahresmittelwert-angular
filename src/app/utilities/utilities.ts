@@ -58,7 +58,7 @@ function getToday() {
     minutes = new Date().getMinutes().toString();
   }
   if (new Date().getHours() < 10) {
-    hours = "0" + new Date().getMinutes().toString();
+    hours = "0" + new Date().getHours().toString();
   }
   else {
     hours = new Date().getHours().toString();
