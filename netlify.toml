@@ -1,0 +1,6 @@
+[build]
+  base = "/"
+  TZ = "Europe/Berlin"
+
+[functions]
+  directory = "functions"
