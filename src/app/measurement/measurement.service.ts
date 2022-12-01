@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { concatMap, from, map, Observable, reduce } from 'rxjs';
 import { Measurement } from '../measurement/measurement';
 import { ICard } from '../card/card.interface';
-import { createUrls } from '../utilities/utilities';
 import { StationsService } from '../stations/stations.service';
 
 interface Measurements {

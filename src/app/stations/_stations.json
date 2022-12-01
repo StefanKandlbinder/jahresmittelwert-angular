@@ -1,0 +1,567 @@
+{
+  "stationen": [
+    {
+      "code": "S415",
+      "kurzname": "Linz-24er-Turm",
+      "langname": "Linz-24er-Turm",
+      "geoLaenge": 14.29876,
+      "geoBreite": 48.32337,
+      "geoRechtswert": 71652.0,
+      "geoHochwert": 354353.0,
+      "komponentenCodes": [
+        "PM10kont",
+        "PM25kont",
+        "GSTR",
+        "HGT",
+        "LUFTD0",
+        "TEMP",
+        "RF",
+        "SO2",
+        "NO2",
+        "NO",
+        "STRB",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "L010",
+      "kurzname": "Grünbach",
+      "langname": "Grünbach",
+      "geoLaenge": 14.57506,
+      "geoBreite": 48.53063,
+      "geoRechtswert": 91769.67,
+      "geoHochwert": 377694.75,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "S255",
+      "kurzname": "Kirchschlag bei Linz",
+      "langname": "Kirchschlag bei Linz",
+      "geoLaenge": 14.27281,
+      "geoBreite": 48.41575,
+      "geoRechtswert": 69602.0,
+      "geoHochwert": 364602.0,
+      "komponentenCodes": [
+        "TEMP",
+        "RF",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "L025",
+      "kurzname": "Kirchschlag-Breitenstein",
+      "langname": "Kirchschlag-Breitenstein",
+      "geoLaenge": 14.27279,
+      "geoBreite": 48.41572,
+      "geoRechtswert": 69601.68,
+      "geoHochwert": 364599.47,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "L015",
+      "kurzname": "Kirchschlag-Davidschlag",
+      "langname": "Kirchschlag-Davidschlag",
+      "geoLaenge": 14.27398,
+      "geoBreite": 48.44192,
+      "geoRechtswert": 69653.67,
+      "geoHochwert": 367513.88,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "L020",
+      "kurzname": "Krippenstein",
+      "langname": "Krippenstein",
+      "geoLaenge": 13.69333,
+      "geoBreite": 47.52311,
+      "geoRechtswert": 27167.11,
+      "geoHochwert": 264987.84,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "S184",
+      "kurzname": "Linz-Stadtpark",
+      "langname": "Linz-Stadtpark",
+      "geoLaenge": 14.2972,
+      "geoBreite": 48.30619,
+      "geoRechtswert": 71561.0,
+      "geoHochwert": 352442.0,
+      "komponentenCodes": [
+        "PM10kont",
+        "PM25kont",
+        "HGT",
+        "TEMP",
+        "O3",
+        "PM1kont",
+        "RF",
+        "NO2",
+        "NO",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "L023",
+      "kurzname": "Losenstein-Hohe Dirn",
+      "langname": "Losenstein-Hohe Dirn",
+      "geoLaenge": 14.41116,
+      "geoBreite": 47.90618,
+      "geoRechtswert": 80636.07,
+      "geoHochwert": 308076.97,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "L017",
+      "kurzname": "Mattighofen",
+      "langname": "Mattighofen",
+      "geoLaenge": 13.15178,
+      "geoBreite": 48.09723,
+      "geoRechtswert": -13464.75,
+      "geoHochwert": 328777.16,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "S261",
+      "kurzname": "Met. Gmunden",
+      "langname": "Met. Gmunden",
+      "geoLaenge": 13.78327,
+      "geoBreite": 47.92188,
+      "geoRechtswert": 33685.0,
+      "geoHochwert": 309360.0,
+      "komponentenCodes": [
+        "TEMP",
+        "RF",
+        "STRB",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "S267",
+      "kurzname": "Met. Sinnersdorf",
+      "langname": "Met. Sinnersdorf",
+      "geoLaenge": 14.15624,
+      "geoBreite": 48.181,
+      "geoRechtswert": 61253.0,
+      "geoHochwert": 338400.0,
+      "komponentenCodes": [
+        "TEMP",
+        "RF",
+        "STRB",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "L006",
+      "kurzname": "Münzkirchen",
+      "langname": "Münzkirchen",
+      "geoLaenge": 13.55806,
+      "geoBreite": 48.47917,
+      "geoRechtswert": 16673.83,
+      "geoHochwert": 371254.3,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "L005",
+      "kurzname": "Nationalpark-Bodinggraben",
+      "langname": "Nationalpark-Bodinggraben",
+      "geoLaenge": 14.39385,
+      "geoBreite": 47.79201,
+      "geoRechtswert": 79516.95,
+      "geoHochwert": 295364.9,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "L004",
+      "kurzname": "Nationalpark-Zöblboden",
+      "langname": "Nationalpark-Zöblboden",
+      "geoLaenge": 14.44097,
+      "geoBreite": 47.83819,
+      "geoRechtswert": 82972.88,
+      "geoHochwert": 300549.12,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "S416",
+      "kurzname": "Linz-Neue Welt",
+      "langname": "Linz-Neue Welt",
+      "geoLaenge": 14.31481,
+      "geoBreite": 48.2733,
+      "geoRechtswert": 72913.0,
+      "geoHochwert": 348802.0,
+      "komponentenCodes": [
+        "PM10kont",
+        "PM25kont",
+        "HGT",
+        "CO",
+        "TEMP",
+        "O3",
+        "RF",
+        "SO2",
+        "H2S",
+        "NO2",
+        "NO",
+        "STRB",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "L014",
+      "kurzname": "Pasching",
+      "langname": "Pasching",
+      "geoLaenge": 14.21005,
+      "geoBreite": 48.25868,
+      "geoRechtswert": 65156.45,
+      "geoHochwert": 347082.25,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "S431",
+      "kurzname": "Linz-Römerberg",
+      "langname": "Linz-Römerberg",
+      "geoLaenge": 14.28215,
+      "geoBreite": 48.30299,
+      "geoRechtswert": 70446.0,
+      "geoHochwert": 352072.0,
+      "komponentenCodes": [
+        "PM10kont",
+        "PM25kont",
+        "HGT",
+        "CO",
+        "TEMP",
+        "RM",
+        "RF",
+        "NO2",
+        "NO",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "L024",
+      "kurzname": "Steinbach am Attersee",
+      "langname": "Steinbach am Attersee",
+      "geoLaenge": 13.55389,
+      "geoBreite": 47.84116,
+      "geoRechtswert": 16566.51,
+      "geoHochwert": 300310.53,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT"
+      ]
+    },
+    {
+      "code": "L011",
+      "kurzname": "Steyr",
+      "langname": "Steyr",
+      "geoLaenge": 14.44223,
+      "geoBreite": 48.04924,
+      "geoRechtswert": 82730.46,
+      "geoHochwert": 324016.53,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "S409",
+      "kurzname": "Steyr",
+      "langname": "Steyr",
+      "geoLaenge": 14.44223,
+      "geoBreite": 48.04924,
+      "geoRechtswert": 82730.0,
+      "geoHochwert": 324016.0,
+      "komponentenCodes": [
+        "PM10kont",
+        "PM25kont",
+        "HGT",
+        "TEMP",
+        "O3",
+        "RF",
+        "SO2",
+        "NO2",
+        "NO",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "S417",
+      "kurzname": "Steyregg-Weih",
+      "langname": "Steyregg-Weih",
+      "geoLaenge": 14.3536,
+      "geoBreite": 48.28851,
+      "geoRechtswert": 75771.0,
+      "geoHochwert": 350530.0,
+      "komponentenCodes": [
+        "GSTR",
+        "HGT",
+        "TEMP",
+        "RF",
+        "SONNE",
+        "UVB",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "S173",
+      "kurzname": "Steyregg-Au",
+      "langname": "Steyregg-Au",
+      "geoLaenge": 14.36651,
+      "geoBreite": 48.27974,
+      "geoRechtswert": 76742.0,
+      "geoHochwert": 349568.0,
+      "komponentenCodes": [
+        "PM10kont",
+        "PM25kont",
+        "HGT",
+        "CO",
+        "TEMP",
+        "RF",
+        "SO2",
+        "NO2",
+        "NO",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "L009",
+      "kurzname": "Steyregg-Weih",
+      "langname": "Steyregg-Weih",
+      "geoLaenge": 14.35362,
+      "geoBreite": 48.28853,
+      "geoRechtswert": 75772.73,
+      "geoHochwert": 350532.38,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "L013",
+      "kurzname": "Traun",
+      "langname": "Traun",
+      "geoLaenge": 14.25301,
+      "geoBreite": 48.23552,
+      "geoRechtswert": 68376.91,
+      "geoHochwert": 344544.56,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "S404",
+      "kurzname": "Traun",
+      "langname": "Traun",
+      "geoLaenge": 14.23755,
+      "geoBreite": 48.22533,
+      "geoRechtswert": 67241.0,
+      "geoHochwert": 343397.0,
+      "komponentenCodes": [
+        "PM10kont",
+        "PM25kont",
+        "HGT",
+        "TEMP",
+        "O3",
+        "RF",
+        "NO2",
+        "NO",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "L019",
+      "kurzname": "Ulrichsberg-Schöneben",
+      "langname": "Ulrichsberg-Schöneben",
+      "geoLaenge": 13.94564,
+      "geoBreite": 48.70566,
+      "geoRechtswert": 45127.63,
+      "geoHochwert": 396596.62,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "L016",
+      "kurzname": "Vöcklabruck",
+      "langname": "Vöcklabruck",
+      "geoLaenge": 13.64522,
+      "geoBreite": 48.00569,
+      "geoRechtswert": 23330.22,
+      "geoHochwert": 318628.16,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "S407",
+      "kurzname": "Vöcklabruck",
+      "langname": "Vöcklabruck",
+      "geoLaenge": 13.66731,
+      "geoBreite": 48.00083,
+      "geoRechtswert": 24980.0,
+      "geoHochwert": 318094.0,
+      "komponentenCodes": [
+        "PM10kont",
+        "PM25kont",
+        "HGT",
+        "TEMP",
+        "RF",
+        "SO2",
+        "H2S",
+        "NO2",
+        "NO",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "S406",
+      "kurzname": "Wels",
+      "langname": "Wels",
+      "geoLaenge": 14.03662,
+      "geoBreite": 48.1649,
+      "geoRechtswert": 52373.0,
+      "geoHochwert": 336521.0,
+      "komponentenCodes": [
+        "PM10kont",
+        "PM25kont",
+        "HGT",
+        "CO",
+        "TEMP",
+        "O3",
+        "RF",
+        "SO2",
+        "NO2",
+        "NO",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
+    },
+    {
+      "code": "L007",
+      "kurzname": "Wels-Rathaus",
+      "langname": "Wels-Rathaus",
+      "geoLaenge": 14.02477,
+      "geoBreite": 48.15639,
+      "geoRechtswert": 51500.99,
+      "geoHochwert": 335567.66,
+      "komponentenCodes": [
+        "LichtMag",
+        "LichtMagT",
+        "LichMAu00",
+        "LichMPhas",
+        "LichMUn00"
+      ]
+    },
+    {
+      "code": "ZOE2",
+      "kurzname": "Zöbelboden 2 (UBA)",
+      "langname": "Zöbelboden 2 (UBA)",
+      "geoLaenge": 14.44139,
+      "geoBreite": 47.83861,
+      "geoRechtswert": 83003.0,
+      "geoHochwert": 300596.0,
+      "komponentenCodes": [
+        "O3"
+      ]
+    }
+  ]
+}
