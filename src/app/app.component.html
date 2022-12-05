@@ -1,38 +1,94 @@
 <div
-  class="bg-indigo-800 px-4 text-white py-6 align-center justify-center flex w-full flex-col items-center shadow-xl border-b border-2 border-indigo-900">
+  class="bg-indigo-800 px-4 text-white py-6 align-center justify-center flex w-full flex-col items-center shadow-xl border-b border-2 border-indigo-900"
+>
   <div id="header" class="mb-4 font-bold tracking-wide text-lg">
-    {{title}}
+    {{ title }}
   </div>
   <div class="grid gap-3 grid-cols-1 md:grid-cols-2 w-full max-w-xl">
-    <select (change)="onChangePolluter($event)"
-      class="tracking-wide w-full text-center p-2 rounded-md text-indigo-800 bg-white" name="stations">
-      <option value=""> --Wähle einen Verschmutzer-- </option>
-      <option [selected]="station.measurand === measurand" *ngFor="let measurand of measurands" [value]="measurand">
-        {{measurand}}</option>
+    <select
+      (change)="onChangePolluter($event)"
+      class="tracking-wide w-full text-center p-2 rounded-md text-indigo-800 bg-white"
+      name="stations"
+    >
+      <option value="">--Wähle einen Verschmutzer--</option>
+      <option
+        [selected]="station.measurand === measurand"
+        *ngFor="let measurand of measurands"
+        [value]="measurand"
+      >
+        {{ measurand }}
+      </option>
     </select>
-    <select (change)="onChangeStation($event)"
-      class="tracking-wide w-full text-center p-2 rounded-md text-indigo-800 bg-white" name="stations"
-      id="stationSelect">
-      <option value=""> --Wähle eine Messstation-- </option>
-      <option [selected]="selectedStation === station.code" *ngFor="let station of stations" [value]="station.code">
-        {{station.kurzname}}</option>
+    <select
+      (change)="onChangeStation($event)"
+      class="tracking-wide w-full text-center p-2 rounded-md text-indigo-800 bg-white"
+      name="stations"
+      id="stationSelect"
+    >
+      <option value="">--Wähle eine Messstation--</option>
+      <option
+        [selected]="selectedStation === station.code"
+        *ngFor="let station of stations"
+        [value]="station.code"
+      >
+        {{ station.kurzname }}
+      </option>
     </select>
   </div>
 </div>
-<div class="flex flex-col items-center flex-grow text-white text-xl font-bold tracking-wide mt-10">
+<div
+  class="flex flex-col items-center flex-grow text-white text-xl font-bold tracking-wide mt-10"
+>
   <jmw-card [station]="station"></jmw-card>
   <jmw-loading *ngIf="loading"></jmw-loading>
 </div>
 <div #periodButtonGroup class="flex mt-6 justify-center">
-  <jmw-button id="nowButton" class="active" (click)="onHandlePeriod($event, 0, 'HMW')">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pointer-events-none" fill="none" viewBox="0 0 24 24"
-      stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth=2
-        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+  <jmw-button
+    id="nowButton"
+    aria-label="Now"
+    class="active"
+    (click)="onHandlePeriod($event, 0, 'HMW')"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 pointer-events-none"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
     </svg>
   </jmw-button>
-  <jmw-button id="dailyButton" (click)="onHandlePeriod($event, 1, 'TMW')" class="ml-2">T</jmw-button>
-  <jmw-button id="weeklyButton" (click)="onHandlePeriod($event, 7, 'TMW')" class="ml-2">W</jmw-button>
-  <jmw-button id="monthlyButton" (click)="onHandlePeriod($event, 31, 'TMW')" class="ml-2">M</jmw-button>
-  <jmw-button id="yearlyButton" class="ml-2 pointer-events-none opacity-50">J</jmw-button>
+  <jmw-button
+    id="dailyButton"
+    aria-label="Daily"
+    (click)="onHandlePeriod($event, 1, 'TMW')"
+    class="ml-2"
+    >T</jmw-button
+  >
+  <jmw-button
+    id="weeklyButton"
+    aria-label="Weekly"
+    (click)="onHandlePeriod($event, 7, 'TMW')"
+    class="ml-2"
+    >W</jmw-button
+  >
+  <jmw-button
+    id="monthlyButton"
+    aria-label="Monthly"
+    (click)="onHandlePeriod($event, 31, 'TMW')"
+    class="ml-2"
+    >M</jmw-button
+  >
+  <jmw-button
+    id="yearlyButton"
+    aria-label="Yearly"
+    class="ml-2 pointer-events-none opacity-50"
+    >J</jmw-button
+  >
 </div>
