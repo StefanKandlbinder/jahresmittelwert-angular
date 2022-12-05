@@ -1,1 +1,3 @@
-<button><ng-content></ng-content></button>
+<button [attr.aria-label]="label" role="button">
+  <ng-content></ng-content>
+</button>

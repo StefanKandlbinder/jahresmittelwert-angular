@@ -45,7 +45,8 @@
 <div #periodButtonGroup class="flex mt-6 justify-center">
   <jmw-button
     id="nowButton"
-    aria-label="Now"
+    label="Now"
+    role="button"
     class="active"
     (click)="onHandlePeriod($event, 0, 'HMW')"
   >
@@ -66,28 +67,32 @@
   </jmw-button>
   <jmw-button
     id="dailyButton"
-    aria-label="Daily"
+    label="Daily"
+    role="button"
     (click)="onHandlePeriod($event, 1, 'TMW')"
     class="ml-2"
     >T</jmw-button
   >
   <jmw-button
     id="weeklyButton"
-    aria-label="Weekly"
+    label="Weekly"
+    role="button"
     (click)="onHandlePeriod($event, 7, 'TMW')"
     class="ml-2"
     >W</jmw-button
   >
   <jmw-button
     id="monthlyButton"
-    aria-label="Monthly"
+    label="Monthly"
+    role="button"
     (click)="onHandlePeriod($event, 31, 'TMW')"
     class="ml-2"
     >M</jmw-button
   >
   <jmw-button
     id="yearlyButton"
-    aria-label="Yearly"
+    label="Yearly"
+    role="button"
     class="ml-2 pointer-events-none opacity-50"
     >J</jmw-button
   >

@@ -13,6 +13,7 @@ import { ICard } from './card/card.interface';
 import { MeasurementService } from './measurement/measurement.service';
 import { Station } from './stations/station';
 import { StationsService } from './stations/stations.service';
+import { SEOService } from './seo//seo.service';
 import { createUrls } from './utilities/utilities';
 
 @Component({
@@ -43,7 +44,8 @@ export class AppComponent implements OnInit, OnChanges {
 
   constructor(
     private measurementService: MeasurementService,
-    private stationsService: StationsService
+    private stationsService: StationsService,
+    private seoService: SEOService
   ) {
     this.stations = this.stationsService.getStations();
   }
@@ -54,6 +56,9 @@ export class AppComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.seoService.updateCanonicalUrl(
+      'https://jahresmittelwert-angular.netlify.app/'
+    );
     this.update();
   }
 
