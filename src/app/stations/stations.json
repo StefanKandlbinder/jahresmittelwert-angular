@@ -96,6 +96,26 @@
         "WIV",
         "WIR"
       ]
+    },
+    {
+      "code": "S283",
+      "kurzname": "Rohrbach 3",
+      "langname": "Rohrbach 3",
+      "geoLaenge": 13.97978,
+      "geoBreite": 48.57347,
+      "geoRechtswert": 47765,
+      "geoHochwert": 381917,
+      "komponentenCodes": [
+        "PM10kont",
+        "PM25kont",
+        "TEMP",
+        "RF",
+        "NO2",
+        "NO",
+        "BOE",
+        "WIV",
+        "WIR"
+      ]
     }
   ]
 }
